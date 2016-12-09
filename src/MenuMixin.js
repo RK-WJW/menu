@@ -136,6 +136,8 @@ const MenuMixin = {
       this.setState({
         activeKey: activeItem.props.eventKey,
       }, () => {
+        // 解决按键盘上下键切换，当前item不在可视区域内的问题
+        ReactDOM.findDOMNode(activeItem).scrollIntoViewIfNeeded(false);
         scrollIntoView(ReactDOM.findDOMNode(activeItem), ReactDOM.findDOMNode(this), {
           onlyScrollIfNeeded: true,
         });
