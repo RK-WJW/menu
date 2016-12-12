@@ -1,5 +1,9 @@
-# rc-menu
+# rk-rc-menu (rc-menu)
 ---
+
+rk-rc-menu: https://github.com/RK-WJW/menu, 在[rc-menu](http://github.com/react-component/menu)基础上做了些调整
+- 去掉了依赖模块`dom-scroll-into-view`，使用了`scrollIntoViewIfNeeded`代替
+
 
 react menu component. port from https://github.com/kissyteam/menu
 

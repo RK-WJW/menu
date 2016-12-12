@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import KeyCode from 'rc-util/lib/KeyCode';
 import createChainedFunction from 'rc-util/lib/createChainedFunction';
 import classnames from 'classnames';
-import scrollIntoView from 'dom-scroll-into-view';
 import { getKeyFromChildrenIndex, loopMenuItem } from './util';
 import DOMWrap from './DOMWrap';
 
@@ -138,9 +137,6 @@ const MenuMixin = {
       }, () => {
         // 解决按键盘上下键切换，当前item不在可视区域内的问题
         ReactDOM.findDOMNode(activeItem).scrollIntoViewIfNeeded(false);
-        scrollIntoView(ReactDOM.findDOMNode(activeItem), ReactDOM.findDOMNode(this), {
-          onlyScrollIfNeeded: true,
-        });
       });
       return 1;
     } else if (activeItem === undefined) {
